@@ -1,0 +1,307 @@
+{%extends 'base.html'%}
+{%block head%}
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{%endblock head%}
+
+{%block body%}
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        width: 330px;
+        float: right;
+        background-color: white;
+        margin-top: 3px;
+        margin-bottom: 10px;
+    }
+
+    .cardd {
+
+
+        width: 400px;
+        float: right;
+        background-color: white;
+        margin-top: 3px;
+        margin-bottom: 8px;
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        background-color: white;
+    }
+
+    .phto {
+        width: 350px;
+        height: 145px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .tag {
+        margin-left: 10px;
+
+    }
+</style>
+{%for items in items%}
+<div class="card" style="float: left;margin-top:3px;margin-left: 10px;margin-bottom:10px;">
+    <center>
+
+        <div class="contain" style="width: 100%;height: 140px;margin-bottom:20px;">
+
+            <div id="myCarousel" class="carousel slide" data-ride="carousel"
+                style="height: 160px;width:100%;margin-right:10px">
+
+
+
+
+
+
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="{{items.img1}}" alt="image 1" style="width:370px;height: 160px">
+                    </div>
+
+                    <div class="item">
+                        <img src="{{items.img2}}" alt="image 2" style="width:370px;height: 160px">
+                    </div>
+
+                    <div class="item">
+                        <img src="{{items.img3}}" alt="image 3" style="width:370px;height: 160px">
+                    </div>
+                </div>
+
+                <br>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+
+        <div>
+            <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 16px;margin-top:40px;">
+                Product Specification
+            </p>
+            <p>{{items.Description}}</p>
+        </div>
+
+
+        
+
+        <a href="/productview/{{items.id}}/{{items.Price}}"><button
+                style=" margin-left: 10px; margin-top:10px ;border-style: none; color: white;background-color:orangered;height:45px;width:240px;border-radius:2px; margin-bottom: 10px;">Back To Quick View</button></a>
+
+
+
+        <!-- offer -->
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+<!-- detail card -->
+
+<div class="card" style="width:850px;height: 230px;float: left;margin-left:28px;margin-top:7px;">
+    <div class="cardd" style="background-color:white;
+        width:850px;
+        margin-top: -5px;
+        float:left;
+        
+        height:230px;">
+
+
+        <!-- logo -->
+        <div class="cardd" style="width: 800px;">
+            <img src="{{items.icon}}" style="width:90px;height:45px;float:left;margin-left:20px;margin-top: 10px;">
+
+        </div>
+
+
+
+        <div class="cardd" style="width:400px ;margin-top:px;float: left;">
+
+            <p style="margin-left: 10px;">Product Name : {{items.Name}} </p>
+            <p style="margin-left: 10px;">Manufacturer : {{items.Brand}}</p>
+            <p style="margin-left: 10px;">Product origin : {{items.origin}}</p>
+
+        </div>
+
+        <div style="float:right;margin-right:140px;margin-bottom:10px;">
+            <p>Product Category: {{items.category}}</p>
+            <p>CashBack Processing Time: Upto 7 days</p>
+            <p>CashBack Eligible Platforms: Amazon/Flipkart</p>
+            <p>Warranty By - Manufacturer</p>
+            <p>EMI Option - Available on Selected Debit/credit <br> cards and with Zest Money</p>
+        </div>
+
+        <div style=>
+            <img src="/static/verified.png"
+                style="height:40px;width:100px;float:left;margin-left: -380px;margin-top:110px;">
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <!-- offers     -->
+
+    <div class="card " style="background-color:white;
+    width:370px;
+    margin-top:25px;
+    margin-left:4px;
+    float:left;
+    height:230px;
+    margin-bottom: -10px;">
+
+        <div class="tag" style="width:350px;">
+
+
+            <img src="/static/flipkart.png"
+                style="width:100px;height:65px;float:left;margin-top:18px;margin-right:10px;">
+            <p style="font-size: 13px;"><br>Bank Offer | 5% Unlimited Cashback on Flipkart Axis Bank Credit Card</p>
+            <p style="margin-top: -10px; font-size: 13px;"> Bank Offer | 10% Off on Bank of Baroda Master debit card
+                first time transaction</p>
+
+
+            <img src="https://www.india.com/wp-content/uploads/2020/07/Amazon.jpg"
+                style="width:100px;height:70px;float:left;margin-top:19px;margin-right: 10px;">
+            <p style="margin-top: 15px;font-size:13px;">Bank Offer | Flat INR 3000 Instant Discount on SBI Credit Card
+                Transactions</p>
+            <p style="margin-top:-10px;font-size: 13px;width:240px;float:right;">Extra CashBack | 5% back with Amazon
+                Pay ICICI Bank Credit card for Prime members. 3% back for everybody else </p>
+        </div>
+
+
+
+
+    </div>
+
+    <!-- Flipkart order cart -->
+    <div class="card " style="background-color:white;
+    width:220px;
+    margin-top:25px;
+    margin-left:20px;
+    float:left;
+    height:230px;
+    margin-bottom: -10px;">
+        <div class="tag">
+            <img src="https://asset20.ckassets.com/resources/image/stores/flipkart-mobiles-coupons.png"
+                style="width:100px;height:55px;float:left;margin-top:10px;">
+        </div>
+
+
+
+        <div class="card" style="width:100% ;margin-top: 10px;">
+
+            <p style="margin-left: 10px;margin-top: 10px;">Selling Price: <b>₹{{items.Price_flipkart}}</b></p>
+        </div>
+        <div class="card" style="width:100%;margin-top:-10px;">
+            <p style="margin-left: 10px;margin-top: 10px;">CashBack: <b>₹{{cb1}}</b></p>
+        </div>
+        <div class="card" style="width: 100%;margin-top: -10px;height:75px">
+            <a href="{{items.Flipkart_Link}}"><button
+                    style=" margin-left: 10px; margin-top:15px ; border-style: none; color: white;background-color:rgb(30 ,144 ,255);height:30px;width:120px;border-radius:2px; margin-bottom: 10px;">Buy
+                    Now</button></a>
+        </div>
+
+
+    </div>
+
+
+    <!-- AMAZON NEW CARD -->
+    <div class="card " style="background-color:white;
+    width:220px;
+    margin-top:25px;
+    margin-left:15px;
+    float:left;
+    height:200px;
+    margin-bottom: -10px;">
+        <div class="tag">
+            <img src="https://asset20.ckassets.com/resources/image/stores/amazon-mobiles-1602658793.png"
+                style="width:100px;height:55px;float:left;margin-top:10px;">
+        </div>
+
+
+
+        <div class="card" style="width: 100%;margin-top: 10px;">
+
+            <p style="margin-left: 10px;margin-top: 10px;">Selling Price: <b>₹{{items.Price_Amazon}}</b></p>
+        </div>
+        <div class="card" style="width: 220px;margin-top:-10px;">
+            <p style="margin-left: 10px;margin-top: 10px;">CashBack: <b>₹{{cb2}}</b>
+        </div>
+        <div class="card" style="width: 220px;margin-top: -10px;height: 75px;">
+            <a href="{{items.Amazon_Link}}"><button type="button"
+                    style=" margin-left: 10px; margin-top:15px ; border-style: none; color:black;background-color:rgb(255, 193, 0);height:30px;width:120px;border-radius:2px; margin-bottom: 10px;">Buy
+                    Now</button></a>
+        </div>
+
+
+    </div>
+
+    {%endfor%}
+    {%endblock body%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

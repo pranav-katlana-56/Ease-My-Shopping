@@ -1,0 +1,45 @@
+{%extends "base.html"%}
+{%block body %}
+<style>
+    .a {
+        margin-top: 10px;
+        width: 240px;
+        height: 25px;
+        border-radius: 5px;
+        border-width: thin;
+    }
+</style>
+
+    <div style="width: 300px;float: left; background-color: white;margin-left: 260px;margin-top: 10px;">
+        <center>
+        <p style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size: 22px;">CashBack Form</p>
+  
+        <form method="POST" action="sucess">
+            {%csrf_token%}
+            <input type="text" placeholder="Buyer Name as on Bill" id="buyer" name="buyer" class="a">
+            <input type="number" placeholder="Buyer Mobile Number" id="buyer" name="mobile" class="a">
+            <input type="email" placeholder="Buyer Email Address" id="buyer" name="email" class="a">
+            <input type="text" placeholder="Product Name as on Bill" id="buyer" name="Product_Name" class="a">
+            <input type="number" placeholder="Purchase Value without Cashback" id="value" name="value" class="a">
+            <input type="text" placeholder="Date of Purchase(MM/DD/YYYY)" id="buyer" name="date" class="a">
+            <input type="text" placeholder="Order ID" id="buyer" name="orderid" class="a">
+            <input type="text" placeholder="Platform Name (Amazon/Flipkart)" id="platform" name="platform" class="a">
+            <input type="email" placeholder="UPI Address for Cashback"  name="upi" class="a">
+            <a href=""><button type="submit"
+                    style=" margin-left: 10px; margin-top:20px ; border-style: none; color: white;background-color:rgb(30 ,144 ,255);height:45px;width:240px;border-radius:5px; margin-bottom: 10px;font-size: 16px;">Submit</button></a><br>
+
+        </form>
+        
+        </center>
+    
+    </div>
+    <a href="products">
+    <img src="/static/coffee.png" style="width: 300px;float: left;height:490px;margin-top: 10px;margin-left: 15px;">
+    </a>
+
+
+
+
+
+
+{%endblock body%}

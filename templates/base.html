@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {%block head%}
+
+        {%endblock head%}
+       
+        <link rel="icon" href="/static/img.png">
+        <title>Ease My Shopping</title>
+
+    </head>
+
+    <body style="background-color: rgb(250,250,250);">
+        <style type="text/css">
+        
+            .navbar {
+                background-color: black;
+                height: 70px;
+                width: 1295px;
+                margin-top: -15px;
+                margin-left: -20px;
+                margin-right: -20px;
+
+                padding-top: auto;
+                
+                
+                
+                
+            }
+
+            .link {
+                float: ;
+                color: white;
+            }
+
+            .link2 {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+
+            
+        </style>
+        <div class="navbar">
+            <div style="float: left;">
+                <a href="/home">
+                <img src="/static/easelogo.png" style="height: 50px;margin-top:15px;margin-left:15px;margin-right:70px"></a>
+            </div><br>
+            <div style="margin-top: 13px">
+                <style type="text/css">
+                    .nnn {
+                        text-decoration: none;
+                        color: white;
+                        margin-left: 24px;
+                        font-family: sans-serif;
+                        font-size: 15px
+                    }
+                </style>
+                <a href="/home" class="nnn">Home</a>
+                <a href="/products" class="nnn">Products</a>
+                <a href="/trending" class="nnn">News</a>
+                <a href="/cashback" class="nnn">CashBack</a>
+                <a href="/contactus" class="nnn">Contact Us </a>
+            </div>
+
+            <form method='get' action="/search" style="margin-left: 20px;float: right;margin-right: 80px; margin-top: -23px">
+                {% csrf_token %}
+
+                <input type="search" placeholder="Search Products/Gadgets/New launches" name="search" id="search"
+                    style="height:28px;width:300px;border-radius: 5px;border-style: none;">
+                <button type="submit" 
+                    style="height:30px;background-color: orange;border-style: none;width:75px;color: black;border-radius:2px">Search</button>
+
+
+
+            </form>
+
+
+
+
+
+        </div>
+    {%block body%}
+        
+    {%endblock body%}
+
+    
+    
+</html>

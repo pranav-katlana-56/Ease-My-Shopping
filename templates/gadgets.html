@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{%block body%}
+    {%for item in items%}
+        <div class="card"
+            style="white;background-color:white;width:250px;margin-top:13px;margin-left:28px;float:left;height:400px;margin-bottom: 10px;">
+            <center>
+                <img src="{{item.img1}}" style="width:100%;height:150px;">
+                <div class="container">
+                    <h4><b style="font-family:sans-serif;"> {{item.Name}} </b></h4>
+                    <p style="margin-top:-15px;border-style: solid;border-width:thin;width:120px;border-radius:5px;">
+                        {{item.Origin}}
+                    </p>
+                    <p style="margin-top:-7px;color:rgb(154,0,0);">CashBack Available 🔥</p>
+                    <p><b>Best Price ₹{{item.Price}}</b></p>
+                    <a href="gadgetsview"><button type="button"
+                            style=" border-style: none; color: white;background-color:rgb(30 ,144 ,255);height:30px;width:120px;border-radius:2px; margin-bottom: 10px;">Quick
+                            View</button></a>
+                </div>
+            </center>
+        </div>
+    {%endfor%}
+
+
+
+
+{%endblock body%}
